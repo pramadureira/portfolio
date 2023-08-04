@@ -4,7 +4,7 @@
 
 * {
     margin: 0;
-    background-color: rgba(7, 14, 76, 1);
+    background-color: #070e4c;
 }
 
 section > h2 {
@@ -16,6 +16,7 @@ section > h2 {
     text-align: center;
 }
 
+
 header > nav {
     left: 0;
     top: 0;
@@ -23,15 +24,16 @@ header > nav {
     height: 4em;
     position: fixed;
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    
     align-items: center;
 }
 
-header > nav > a {
+header a {
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-size: 0.7em;
     color: #ffffff;
+    align-self: center;
     margin: 1.2em;
 }
 
@@ -42,12 +44,17 @@ header > nav > a:first-child {
     font-weight: 600;
 }
 
-header > nav > a:last-child {
+header #nav-menu > a:last-child {
     border: 1px solid #ffffff;
     border-radius: 1.8em;
     padding: 0.7em 2em;
     margin-right: 2em;
 }
+
+#nav-toggle {
+    display: none;
+}
+
 
 #about {
     width: 75vw;
@@ -55,7 +62,7 @@ header > nav > a:last-child {
     margin: 0 auto;
     display: grid;
     padding-top: 10em;
-    margin-bottom: 20em;
+    margin-bottom: 1em;
 }
 
 #about > h1 {
@@ -199,10 +206,11 @@ footer > p {
    
     article.project {
         display: grid;
+        grid-template-columns: auto min-content;
     }
     
     article.project > h3 {
-        grid-area: 1 / 1 / span 1 / span 2;
+        grid-area: 1 / 1 / span 1 / span 1;
     
         justify-self: start;
     }
@@ -226,7 +234,51 @@ footer > p {
 
     article.project a {
         grid-area: 1 / 2;
-        margin: auto;
+        padding-left: 1em;
+        margin: auto 0 auto auto;
     }
     
+    header > nav {
+        display: grid;
+        align-items: normal;
+        grid-template-columns: auto min-content;
+    }
+
+    header > nav > a:first-child {
+        grid-area: 1/1;
+    }
+
+    #nav-toggle {
+        grid-area: 1/2;
+        display: block;
+        cursor: pointer;
+        border: none;
+        padding: 0;
+        margin-right: 1em;
+    }
+
+    #nav-menu {
+        display: none;
+        position: absolute;
+        right: .8em;
+        grid-area: 2 / 1 / span 1 / span 2;
+        flex-direction: column;
+        background-color: white;
+        width: fit-content;
+        border-radius: .2em;
+    }
+
+    header > nav > #nav-menu a, header #nav-menu > a:last-child {
+        text-align: center;
+        background-color: white;
+        border-radius: .3em;
+        color: #070e4c;
+        margin: 0;
+        padding: 1.1em 3em;
+        text-align: center;
+    }
+
+    header > nav > #nav-menu a:hover {
+        background-color: #DEDEDE;
+    }
 }
