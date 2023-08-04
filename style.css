@@ -72,13 +72,16 @@ header > nav > a:last-child {
 
 #about > p {
     font-family: 'Roboto', sans-serif;
-    font-size: 0.9em;
+    font-size: 1em;
     color: #B8B8B8;
     grid-area: 2 / 1;
     margin-top: 1em;
 }
 
 #about > img {
+    max-width: 100%;
+    height: auto;
+
     grid-area: 1 / 2 / span 2 / span 1;
     margin-left: 1em;
 }
@@ -96,14 +99,13 @@ article.project > h3 {
     font-weight: 700;
     font-size: 1.3em;
     color: #DEDEDE;
-    margin-top: auto;
     grid-area: 1 / 1;
 }
 
 article.project > p {
     font-family: 'Roboto', sans-serif;
-    font-weight: 200;
-    font-size: 0.8em;
+    font-weight: 400;
+    font-size: 0.9em;
     color: #959595;
     margin: 1em 0;
     grid-area: 2 / 1;
@@ -129,6 +131,9 @@ article.project li,
 }
 
 img.project-image {
+    max-width: 100%;
+    height: auto;
+
     margin-left: 1em;
     grid-area: 1 / 2 / span 4 / span 1;
 }
@@ -167,4 +172,61 @@ footer > p {
     text-align: center;
     margin-top: 6em;
     margin-bottom: 2em;
+}
+
+@media (max-width: 40em) {
+    #about {
+        display: grid;
+        margin-bottom: 1em;
+    }
+
+    #about > h1 {
+        grid-area: 1 / 1;
+        text-align: center;
+    }
+
+    #about > img {
+        grid-area: 2 / 1;
+        border-radius: 50%;
+        width: 40%;
+        margin: 1.4em auto;
+    }
+
+    #about > p {
+        grid-area: 3 / 1;
+    }
+
+   
+    article.project {
+        display: grid;
+    }
+    
+    article.project > h3 {
+        grid-area: 1 / 1 / span 1 / span 2;
+    
+        justify-self: start;
+    }
+    
+    article.project > p {
+        grid-area: 4 / 1 / span 1 / span 2;
+    }
+    
+    article.project > ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        grid-area: 3 / 1 / span 1 / span 2;
+    }
+   
+    img.project-image {
+        grid-area: 2 / 1 / span 1 / span 2;
+        margin: 1em auto;
+        width: 100%;
+    }
+
+    article.project a {
+        grid-area: 1 / 2;
+        margin: auto;
+    }
+    
 }
