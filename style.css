@@ -125,13 +125,25 @@ article.project > ul {
     grid-area: 3 / 1;
 }
 
-article.project li,
+article.project li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 0.5em;
+    color: #070e4c;
+    background-color: #59BEE9;
+    
+    padding: 0.5em 0.9em;
+    border-radius: 2em;
+    margin: 0.4em;
+    height: fit-content;
+}
+
 #projects > button {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 0.6em;
     color: #DEDEDE;
-    padding: 0.5em 0.9em;
+    padding: 0.7em 0.9em;
     margin: 0.4em;
     border: 1px solid #DEDEDE;
     height: fit-content;
