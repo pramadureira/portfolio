@@ -1,5 +1,5 @@
 const navButton = document.getElementById('nav-toggle');
-const dropdownMenu = document.getElementById('dropdown-menu');
+const dropdownMenu = document.getElementById('nav-menu');
 const toggleButtonIcon = document.querySelector('#nav-toggle i');
 
 function toggleDropdown() {

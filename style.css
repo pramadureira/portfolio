@@ -51,7 +51,7 @@ header #nav-menu > a:last-child {
     margin-right: 2em;
 }
 
-#nav-toggle, #dropdown-menu {
+#nav-toggle {
     display: none;
 }
 
@@ -277,10 +277,6 @@ footer > p {
 
     #nav-menu {
         display: none;
-    }
-
-    #dropdown-menu {
-        display: none;
         position: absolute;
         right: .8em;
         grid-area: 2 / 1 / span 1 / span 2;
@@ -290,11 +286,11 @@ footer > p {
         border-radius: .2em;
     }
 
-    #dropdown-menu.open {
+    #nav-menu.open {
         display: flex;
     }
 
-    header > nav > #dropdown-menu a, header #dropdown-menu > a:last-child {
+    header > nav > #nav-menu a, header #nav-menu > a:last-child {
         text-align: center;
         background-color: white;
         border-radius: .3em;
@@ -304,7 +300,7 @@ footer > p {
         text-align: center;
     }
 
-    header > nav > #dropdown-menu a:hover {
+    header > nav > #nav-menu a:hover {
         background-color: #DEDEDE;
     }
 }
