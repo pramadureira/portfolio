@@ -11,7 +11,7 @@ function setGalleriaContainerHeight() {
 
     containers.forEach(container => {
         const containerWidth = container.clientWidth
-        const desiredRatio = 3 / 2 // 16 / 9, 4 / 3, 3 / 2
+        const desiredRatio = 16 / 9 // 16 / 9, 4 / 3, 3 / 2
     
         const desiredHeight = containerWidth / desiredRatio
     

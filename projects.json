@@ -1,12 +1,12 @@
 {
   "projects": [
     {
-      "name": "Project name",
-      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed vitae ex culpa quibusdam dignissimos, aspernatur deleniti voluptate atque modi tempora vel, sit facilis.",
-      "tags": ["CSS", "JS"],
+      "name": "Trouble Ticket Management Website",
+      "description": "Developed a trouble ticket management website enabling clients to submit, track, and update tickets, while agents can resolve them. Administrators have full control over the system, managing user roles and adding new entities. The website includes real-time insights with performance metrics. Agents can belong to multiple departments, and there is a log of all the changes made to a ticket.",
+      "tags": ["HTML", "CSS", "JS", "PHP", "sqlite", "AJAX/JSON"],
       "images": "proj1",
-      "numImages": 2,
-      "url": "https://github.com/pramadureira"
+      "numImages": 5,
+      "url": "https://github.com/pramadureira/ltw-proj"
     }
   ]
 }

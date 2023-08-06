@@ -202,7 +202,7 @@ article.project ul.project-tags li {
     padding: 0;
     grid-area: 1 / 2 / span 4 / span 1;
 
-    width: 40vw;
+    width: 45vw;
     max-width: 25em;
 }
 
@@ -242,13 +242,7 @@ footer > p {
 }
 
 /* Media Queries */
-@media (max-width: 65em) {
-    .project-images {
-        width: 36vw;
-    }
-}
-
-@media (max-width: 45em) {
+@media (max-width: 49em) {
     article.project {
         display: grid;
         grid-template-columns: 3fr 1fr;
@@ -268,6 +262,8 @@ footer > p {
         list-style: none;
         padding: 0;
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         margin-top: 2em;
         grid-area: 3 / 1 / span 1 / span 2;
     }
