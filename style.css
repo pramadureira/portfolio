@@ -117,7 +117,8 @@ header > nav > a:first-child::before, #nav-menu > a:last-child::before {
 }
 
 #about > img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 20em;
     height: auto;
     grid-area: 1 / 2 / span 2 / span 1;
     margin-left: 1em;
@@ -160,14 +161,14 @@ article.project.hidden {
     display: none;
 }
 
-article.project > ul {
+article.project > ul.project-tags {
     list-style: none;
     padding: 0;
     display: flex;
     grid-area: 3 / 1;
 }
 
-article.project li {
+article.project ul.project-tags li {
     font-weight: 500;
     font-size: 0.6em;
     color: black;
@@ -196,11 +197,18 @@ article.project li {
     cursor: pointer;
 }
 
-img.project-image {
-    max-width: 100%;
-    height: auto;
+.project-images {
     margin-left: 1em;
+    padding: 0;
     grid-area: 1 / 2 / span 4 / span 1;
+
+    width: 40vw;
+    max-width: 25em;
+}
+
+.project-images * {
+    background-color: transparent;
+    border: none;
 }
 
 article.project a {
@@ -234,7 +242,57 @@ footer > p {
 }
 
 /* Media Queries */
+@media (max-width: 65em) {
+    .project-images {
+        width: 36vw;
+    }
+}
+
+@media (max-width: 45em) {
+    article.project {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    
+    article.project > h3 {
+        grid-area: 1 / 1 / span 1 / span 1;
+    
+        justify-self: start;
+    }
+    
+    article.project > p {
+        grid-area: 4 / 1 / span 1 / span 2;
+    }
+    
+    article.project > ul.project-tags {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        margin-top: 2em;
+        grid-area: 3 / 1 / span 1 / span 2;
+    }
+   
+    .project-images {
+        grid-area: 2 / 1 / span 1 / span 2;
+        margin: 1em auto;
+        width: 80vw;
+    }
+
+    article.project a {
+        grid-area: 1 / 2;
+        padding-left: 1em;
+        margin: auto 0 auto auto;
+    }
+}
+
 @media (max-width: 40em) {
+    .project-images {
+        width: 100%;
+        height: 100%;
+        min-width: 10em;
+        min-height: 11em;
+    }
+
     header > nav a::before {
         display: none;
     }
@@ -258,41 +316,6 @@ footer > p {
 
     #about > p {
         grid-area: 3 / 1;
-    }
-
-   
-    article.project {
-        display: grid;
-        grid-template-columns: auto min-content;
-    }
-    
-    article.project > h3 {
-        grid-area: 1 / 1 / span 1 / span 1;
-    
-        justify-self: start;
-    }
-    
-    article.project > p {
-        grid-area: 4 / 1 / span 1 / span 2;
-    }
-    
-    article.project > ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        grid-area: 3 / 1 / span 1 / span 2;
-    }
-   
-    img.project-image {
-        grid-area: 2 / 1 / span 1 / span 2;
-        margin: 1em auto;
-        width: 100%;
-    }
-
-    article.project a {
-        grid-area: 1 / 2;
-        padding-left: 1em;
-        margin: auto 0 auto auto;
     }
     
     header > nav {

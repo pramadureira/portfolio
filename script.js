@@ -1,3 +1,25 @@
+/* Gallery image Section */
+(function() {
+    Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/azur/galleria.azur.min.js')
+    Galleria.run('#proj1')
+}())
+
+setGalleriaContainerHeight();
+
+function setGalleriaContainerHeight() {
+    const containers = document.querySelectorAll('.project-images')
+
+    containers.forEach(container => {
+        const containerWidth = container.clientWidth
+        const desiredRatio = 3 / 2 // 16 / 9, 4 / 3, 3 / 2
+    
+        const desiredHeight = containerWidth / desiredRatio
+    
+        container.style.height = `${desiredHeight}px`
+    })
+}
+
+
 /* Projects Section */
 const showButton = document.querySelector('#projects button')
 let visibleProjects = 4
@@ -44,11 +66,20 @@ function createProjectElement(project) {
     })
     article.appendChild(tags);
 
-    const image = document.createElement('img')
-    image.className = 'project-image'
-    image.src = project.image
-    image.alt = 'Project Image'
-    article.appendChild(image)
+    const imageList = document.createElement('ul')
+    imageList.classList.add('project-images')
+    imageList.setAttribute('id', project.images);
+
+    for (let i = 1; i <= project.numImages; i++) {
+        const imgPath = `images/projects/${project.images}/${i}.jpg`
+        const li = document.createElement('li')
+        const img = document.createElement('img')
+        img.src = imgPath
+        li.appendChild(img)
+        imageList.appendChild(li)
+    }
+
+    article.appendChild(imageList)
 
     const link = document.createElement('a')
     link.href = project.url
@@ -76,6 +107,7 @@ function showMore() {
     showButton.style.display = projectsSection.length - show <= 0 ? "none" : "initial"
 }
 
+
 /* Responsive Navbar */
 const navButton = document.getElementById('nav-toggle')
 const dropdownMenu = document.getElementById('nav-menu')
@@ -93,6 +125,7 @@ function closeDropdown() {
     dropdownMenu.classList.remove('open')
 }
 
+
 /* Event Listeners */
 document.addEventListener('click', function(event) {
     switch (event.target) {
@@ -107,3 +140,5 @@ document.addEventListener('click', function(event) {
             break
     }
 })
+
+window.addEventListener('resize', setGalleriaContainerHeight);
