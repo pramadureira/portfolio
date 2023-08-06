@@ -261,12 +261,18 @@ footer > p {
     }
 
     #nav-toggle {
+        display: block;
         grid-area: 1/2;
         display: block;
         cursor: pointer;
         border: none;
         padding: 0;
+        margin-top: 1em;
         margin-right: 1em;
+    }
+
+    #nav-toggle > i {
+        color: white;
     }
 
     #nav-menu {
@@ -278,6 +284,10 @@ footer > p {
         background-color: white;
         width: fit-content;
         border-radius: .2em;
+    }
+
+    #nav-menu.open {
+        display: flex;
     }
 
     header > nav > #nav-menu a, header #nav-menu > a:last-child {
