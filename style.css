@@ -156,6 +156,10 @@ article.project > p {
     grid-area: 2 / 1;
 }
 
+article.project.hidden {
+    display: none;
+}
+
 article.project > ul {
     list-style: none;
     padding: 0;

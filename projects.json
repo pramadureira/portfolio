@@ -1,0 +1,53 @@
+{
+  "projects": [
+    {
+      "name": "Project name",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed vitae ex culpa quibusdam dignissimos, aspernatur deleniti voluptate atque modi tempora vel, sit facilis.",
+      "tags": ["CSS", "JS"],
+      "image": "https://picsum.photos/300/190",
+      "url": "https://github.com/pramadureira"
+    },
+    {
+      "name": "Project name",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed vitae ex culpa quibusdam dignissimos, aspernatur deleniti voluptate atque modi tempora vel, sit facilis.",
+      "tags": ["CSS", "JS"],
+      "image": "https://picsum.photos/300/190",
+      "url": "https://github.com/pramadureira"
+    },
+    {
+      "name": "Project name",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed vitae ex culpa quibusdam dignissimos, aspernatur deleniti voluptate atque modi tempora vel, sit facilis.",
+      "tags": ["CSS", "JS"],
+      "image": "https://picsum.photos/300/190",
+      "url": "https://github.com/pramadureira"
+    },
+    {
+      "name": "Project name",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed vitae ex culpa quibusdam dignissimos, aspernatur deleniti voluptate atque modi tempora vel, sit facilis.",
+      "tags": ["CSS", "JS"],
+      "image": "https://picsum.photos/300/190",
+      "url": "https://github.com/pramadureira"
+    },
+    {
+      "name": "Project name",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed vitae ex culpa quibusdam dignissimos, aspernatur deleniti voluptate atque modi tempora vel, sit facilis.",
+      "tags": ["CSS", "JS"],
+      "image": "https://picsum.photos/300/190",
+      "url": "https://github.com/pramadureira"
+    },
+    {
+      "name": "Project name",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed vitae ex culpa quibusdam dignissimos, aspernatur deleniti voluptate atque modi tempora vel, sit facilis.",
+      "tags": ["CSS", "JS"],
+      "image": "https://picsum.photos/300/190",
+      "url": "https://github.com/pramadureira"
+    },
+    {
+      "name": "Project name",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed vitae ex culpa quibusdam dignissimos, aspernatur deleniti voluptate atque modi tempora vel, sit facilis.",
+      "tags": ["CSS", "JS"],
+      "image": "https://picsum.photos/300/190",
+      "url": "https://github.com/pramadureira"
+    }
+  ]
+}
