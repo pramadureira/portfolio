@@ -3,10 +3,42 @@
     {
       "name": "Trouble Ticket Management Website",
       "description": "Developed a trouble ticket management website enabling clients to submit, track, and update tickets, while agents can resolve them. Administrators have full control over the system, managing user roles and adding new entities. The website includes real-time insights with performance metrics. Agents can belong to multiple departments, and there is a log of all the changes made to a ticket.",
-      "tags": ["HTML", "CSS", "JS", "PHP", "sqlite", "AJAX/JSON"],
+      "tags": ["HTML", "CSS", "JavaScript", "PHP", "sqlite", "AJAX/JSON"],
       "images": "proj1",
       "numImages": 5,
       "url": "https://github.com/pramadureira/ltw-proj"
+    },
+    {
+      "name": "Paint and Gartic inspired game",
+      "description": "The game offers both single-player and multi-player modes. In single-player mode, users can freely draw without time limits, while multi-player mode enables players to take on roles as either the drawer or the guesser. The project demonstrates my expertise in C programming, hardware interfacing, and software design, utilizing various I/O devices such as keyboard, mouse, real-time clock, and serial communication. The game employs double buffering for smoother graphics rendering and features an intricate state machine to manage user interactions effectively.",
+      "tags": ["C", "I/O Devices"],
+      "images": "proj2",
+      "numImages": 4,
+      "url": "https://github.com/pramadureira/lc-proj"
+    },
+    {
+      "name": "Travelling Salesperson Problem (TSP)",
+      "description": "This project addresses the Travelling Salesperson Problem (TSP), where a salesman aims to find the shortest route visiting a set of cities and returning to the start. It involves three algorithms: a brute-force method for small graphs, a triangular approximation heuristic, and an efficient custom heuristic for larger fully connected graphs. The project concludes with a presentation comparing these methods, considering trade-offs between solution quality and computational efficiency.",
+      "tags": ["C++", "Optimization", "Brute-Force", "Heuristic", "Graphs"],
+      "images": "proj3",
+      "numImages": 2,
+      "url": "https://github.com/pramadureira/da-proj2"
+    },
+    {
+      "name": "Todo List (Google Keep clone)",
+      "description": "Designed and developed a Google Keep clone, which served as a practical exploration of responsive design concepts and marked my initial entry into web development.",
+      "tags": ["HTML", "CSS", "JavaScript", "JSON"],
+      "images": "proj4",
+      "numImages": 4,
+      "url": "https://github.com/pramadureira/todo-list"
+    },
+    {
+      "name": "Ragnar's journey",
+      "description": "In this game, players take control of a hero navigating through diverse dungeons, battling monsters, and collecting coins. The game features different types of monsters with unique behaviors, as well as traps, lakes, and a shop where players can buy more lives and traps. To ensure a structured and easily maintainable codebase, we incorporated various design patterns including the State pattern for managing different game states, the Singleton pattern for maintaining consistent player attributes, and the Strategy pattern for monster movement and collision. Additionally, the MVC architectural pattern divides the game's components into separate Model, View, and Controller classes. Rigorous testing has also been conducted to ensure optimal game functionality.",
+      "tags": ["Java", "JUnit", "Design Patterns"],
+      "images": "proj5",
+      "numImages": 5,
+      "url": "https://github.com/pramadureira/ldts-proj"
     }
   ]
 }

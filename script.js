@@ -1,10 +1,12 @@
 /* Gallery image Section */
 (function() {
     Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/azur/galleria.azur.min.js')
-    Galleria.run('#proj1')
+    for (i = 1; i <= 5; i++) {
+        Galleria.run('#proj'+i)
+    }
 }())
 
-setGalleriaContainerHeight();
+setGalleriaContainerHeight()
 
 function setGalleriaContainerHeight() {
     const containers = document.querySelectorAll('.project-images')
@@ -22,7 +24,7 @@ function setGalleriaContainerHeight() {
 
 /* Projects Section */
 const showButton = document.querySelector('#projects button')
-let visibleProjects = 4
+let visibleProjects = 5
 let showMoreNr = 2
 
 loadProjects()
@@ -37,12 +39,15 @@ function loadProjects() {
 function displayProjects(projects) {
     const projectsSection = document.getElementById('projects')
     const showButton = document.querySelector('#projects button')
+    const hiddenProjects = document.querySelectorAll('article.hidden')
 
     for (let i = 0; i < projects.length; i++) {
         const projectElement = createProjectElement(projects[i])
         if (i >= visibleProjects) projectElement.classList.add('hidden')
         projectsSection.insertBefore(projectElement, showButton)
     }
+
+    showButton.style.display = hiddenProjects.length === 0 ? "none" : "initial"
 }
 
 function createProjectElement(project) {
