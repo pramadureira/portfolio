@@ -1,7 +1,7 @@
 /* Gallery image Section */
 (function() {
     Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/azur/galleria.azur.min.js')
-    for (i = 1; i <= 5; i++) {
+    for (i = 1; i <= 3; i++) { // change according to the var visibleProjects
         Galleria.run('#proj'+i)
     }
 }())
@@ -24,8 +24,8 @@ function setGalleriaContainerHeight() {
 
 /* Projects Section */
 const showButton = document.querySelector('#projects button')
-let visibleProjects = 5
-let showMoreNr = 2
+let visibleProjects = 3
+let showMoreNr = 1
 
 loadProjects()
 
@@ -39,7 +39,6 @@ function loadProjects() {
 function displayProjects(projects) {
     const projectsSection = document.getElementById('projects')
     const showButton = document.querySelector('#projects button')
-    const hiddenProjects = document.querySelectorAll('article.hidden')
 
     for (let i = 0; i < projects.length; i++) {
         const projectElement = createProjectElement(projects[i])
@@ -47,6 +46,7 @@ function displayProjects(projects) {
         projectsSection.insertBefore(projectElement, showButton)
     }
 
+    const hiddenProjects = document.querySelectorAll('article.hidden')
     showButton.style.display = hiddenProjects.length === 0 ? "none" : "initial"
 }
 
@@ -99,17 +99,19 @@ function createProjectElement(project) {
 function showMore() {
     show = showMoreNr
     const projectsSection = document.querySelectorAll('article.hidden')
-    
+
     for (let i = 0; i < projectsSection.length; i++) {
         if (projectsSection[i].classList.contains('hidden')) {
             show--
             projectsSection[i].classList.remove('hidden')
+            visibleProjects++
+            Galleria.run('#proj'+visibleProjects)
         }
 
         if (show === 0) break
     }
-
-    showButton.style.display = projectsSection.length - show <= 0 ? "none" : "initial"
+    
+    showButton.style.display = projectsSection.length - showMoreNr <= 0 ? "none" : "initial"
 }
 
 
