@@ -18,7 +18,7 @@
     },
     {
       "name": "Ragnar's journey",
-      "description": "In this game, players take control of a hero navigating through diverse dungeons, battling monsters, and collecting coins. The game features different types of monsters with unique behaviors, as well as traps, lakes, and a shop where players can buy more lives and traps. To ensure a structured and easily maintainable codebase, we incorporated various design patterns including the State pattern for managing different game states, the Singleton pattern for maintaining consistent player attributes, and the Strategy pattern for monster movement and collision. Additionally, the MVC architectural pattern divides the game's components into separate Model, View, and Controller classes. Rigorous testing has also been conducted to ensure optimal game functionality.",
+      "description": "In this game, players take control of a hero navigating through diverse dungeons, battling monsters, and collecting coins. The game features different types of monsters with unique behaviors, as well as traps, lakes, and a shop where players can buy more lives and traps. To ensure a structured and easily maintainable codebase, we incorporated various design patterns including the State, the Singleton, and the Strategy patterns. Additionally, the MVC architectural pattern divides the game's components into separate Model, View, and Controller classes. Rigorous testing has also been conducted to ensure optimal game functionality.",
       "tags": ["Java", "JUnit", "Design Patterns"],
       "images": "proj3",
       "numImages": 5,
