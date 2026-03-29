@@ -1,22 +1,35 @@
 {
   "projects": [
     {
-      "name": "Trouble Ticket Management Website",
-      "description": "Developed a trouble ticket management website enabling clients to submit, track, and update tickets, while agents can resolve them. Administrators have full control over the system, managing user roles and adding new entities. The website includes real-time insights with performance metrics. Agents can belong to multiple departments, and there is a log of all the changes made to a ticket.",
-      "tags": ["HTML", "CSS", "JavaScript", "PHP", "sqlite", "AJAX/JSON"],
+      "name": "Bosch Future Mobility Challenge",
+      "description": "Led a 5-person team in a global autonomous driving competition through an iterative development cycle, ranking as a top 20 finalist out of 80+ teams. Designed a perception-decision pipeline using hierarchical state machines. Manually curated and annotated data for MobileNet V2 models, optimized for real-time inference on a Raspberry Pi under strict resource constraints.",
+      "tags": ["Python", "Computer Vision", "Edge AI", "Leadership"],
       "assets": [
-        "images/projects/proj1/1.jpg",
-        "images/projects/proj1/2.jpg",
-        "images/projects/proj1/3.jpg",
-        "images/projects/proj1/4.jpg",
-        "images/projects/proj1/5.jpg"
-      ],
-      "url": "https://github.com/pramadureira/ltw-proj"
+        "images/projects/proj9/1.mp4"
+      ]
     },
     {
-      "name": "Paint and Gartic inspired game",
-      "description": "The game offers both single-player and multi-player modes. In single-player mode, users can freely draw without time limits, while multi-player mode enables players to take on roles as either the drawer or the guesser. The project demonstrates my expertise in C programming, hardware interfacing, and software design, utilizing various I/O devices such as keyboard, mouse, real-time clock, and serial communication. The game employs double buffering for smoother graphics rendering and features an intricate state machine to manage user interactions effectively.",
-      "tags": ["C", "I/O Devices"],
+      "name": "Unsupervised Object-Centric Learning",
+      "description": "Architected an unsupervised vision system using Slot Attention to automate nodule segmentation. Engineered a scalable, high-throughput pipeline to curate and normalize 7,980 multi-modal CT cases from heterogeneous sources, ensuring high-fidelity training data.",
+      "tags": ["Python", "PyTorch", "Computer Vision", "Data Engineering"],
+      "assets": [
+        "images/projects/proj10/1.png"
+      ]
+    },
+    {
+      "name": "Distributed Systems Engineering",
+      "description": "Architected a local-first distributed application using Node.js and ZeroMQ to achieve high availability and horizontal scalability. Implemented a consistent hashing ring with virtual nodes for optimal load balancing and utilized Conflict-Free Replicated Data Types (CRDTs) to ensure eventual consistency across distributed replicas.",
+      "tags": ["Node.js", "ZeroMQ", "Distributed Systems", "CRDTs"],
+      "assets": [
+        "images/projects/proj8/1.png",
+        "images/projects/proj8/2.png"
+      ],
+      "url": "https://github.com/pramadureira/sdle-proj"
+    },
+    {
+      "name": "Low-Level Systems & Hardware Design",
+      "description": "Developed a real-time interactive application in C prioritizing hardware efficiency. Directly handled concurrent signals from multiple I/O devices (mouse, keyboard, serial port) via hardware interrupts. Managed asynchronous data streams using concurrent software FIFOs to ensure deterministic synchronization, demonstrating strong foundations in low-level parallelization.",
+      "tags": ["C", "Real-Time Systems", "Hardware Interfacing", "Parallelization"],
       "assets": [
         "images/projects/proj2/1.jpg",
         "images/projects/proj2/2.jpg",
@@ -26,32 +39,20 @@
       "url": "https://github.com/pramadureira/lc-proj"
     },
     {
-      "name": "Ragnar's journey",
-      "description": "In this game, players take control of a hero navigating through diverse dungeons, battling monsters, and collecting coins. The game features different types of monsters with unique behaviors, as well as traps, lakes, and a shop where players can buy more lives and traps. To ensure a structured and easily maintainable codebase, we incorporated various design patterns including the State, the Singleton, and the Strategy patterns. Additionally, the MVC architectural pattern divides the game's components into separate Model, View, and Controller classes. Rigorous testing has also been conducted to ensure optimal game functionality.",
-      "tags": ["Java", "JUnit", "Design Patterns"],
+      "name": "AI-Driven Search Engine (ChessKoban)",
+      "description": "Developed an AI-powered puzzle game in Python that merges Chess mechanics with Sokoban-inspired logic. Implemented multiple uninformed and heuristic search algorithms (BFS, DFS, Greedy, and A*) to solve complex board states. Engineered an autonomous 'Computer Mode' and a real-time 'Tip System', leveraging NetworkX for efficient graph-based pathfinding.",
+      "tags": ["Python", "AI Search", "Algorithms", "Graph Theory"],
       "assets": [
-        "images/projects/proj3/1.jpg",
-        "images/projects/proj3/2.jpg",
-        "images/projects/proj3/3.jpg",
-        "images/projects/proj3/4.jpg",
-        "images/projects/proj3/5.jpg"
+        "images/projects/proj7/1.png",
+        "images/projects/proj7/2.png",
+        "images/projects/proj7/3.png"
       ],
-      "url": "https://github.com/pramadureira/ldts-proj"
+      "url": "https://github.com/pramadureira/ai-proj1"
     },
     {
-      "name": "SportSpotter",
-      "description": "SportSpotter is a project aimed at simplifying sports enthusiasts. The app provides personalized searches, letting users effortlessly find their ideal venues based on preferences like location and sport type. The platform fosters a community-driven environment through user ratings and reviews, empowering fellow enthusiasts.",
-      "tags": ["Flutter", "sqlite", "Google Maps API", "Firebase"],
-      "assets": [
-        "images/projects/proj4/1.jpg",
-        "images/projects/proj4/2.jpg"
-      ],
-      "url": "https://github.com/pramadureira/es-proj"
-    },
-    {
-      "name": "Travelling Salesperson Problem (TSP)",
-      "description": "This project addresses the Travelling Salesperson Problem (TSP), where a salesman aims to find the shortest route visiting a set of cities and returning to the start. It involves three algorithms: a brute-force method for small graphs, a triangular approximation heuristic, and an efficient custom heuristic for larger fully connected graphs. The project concludes with a presentation comparing these methods, considering trade-offs between solution quality and computational efficiency.",
-      "tags": ["C++", "Optimization", "Brute-Force", "Heuristic", "Graphs"],
+      "name": "Algorithmic Optimization (TSP)",
+      "description": "Addressed the Travelling Salesperson Problem (TSP) by implementing and comparing multiple algorithms. Developed a brute-force method for small graphs, a triangular approximation heuristic, and a highly efficient custom heuristic for large, fully connected graphs, thoroughly analyzing computational trade-offs between solution quality and execution time.",
+      "tags": ["C++", "Algorithms", "Optimization", "Heuristics"],
       "assets": [
         "images/projects/proj5/1.jpg",
         "images/projects/proj5/2.jpg"
@@ -59,16 +60,15 @@
       "url": "https://github.com/pramadureira/da-proj2"
     },
     {
-      "name": "Todo List (Google Keep clone)",
-      "description": "Designed and developed a Google Keep clone, which served as a practical exploration of responsive design concepts and marked my initial entry into web development.",
-      "tags": ["HTML", "CSS", "JavaScript", "JSON"],
+      "name": "Enterprise HR Platform (Kuehne + Nagel)",
+      "description": "Conducted stakeholder meetings to translate ambiguous requirements into biweekly sprint plans and technical workflows. Architected a robust database schema and RESTful APIs, prioritizing long-term scalability. Delivered a functional platform meeting all non-technical HR requirements for a global enterprise.",
+      "tags": ["System Architecture", "API Development", "Database Design", "Agile"],
       "assets": [
-        "images/projects/proj6/1.jpg",
-        "images/projects/proj6/2.jpg",
-        "images/projects/proj6/3.jpg",
-        "images/projects/proj6/4.jpg"
-      ],
-      "url": "https://github.com/pramadureira/todo-list"
+        "images/projects/proj11/1.png",
+        "images/projects/proj11/2.png",
+        "images/projects/proj11/3.mp4",
+        "images/projects/proj11/4.png"
+      ]
     }
   ]
 }
