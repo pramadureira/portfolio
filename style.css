@@ -201,7 +201,7 @@ article.project ul.project-tags li {
 
     width: 45vw;
     max-width: 25em;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     min-height: 12em;
     border-radius: 0.6em;
     overflow: hidden;
@@ -243,6 +243,14 @@ article.project ul.project-tags li {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.project-media-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background-color: #000;
 }
 
 .lg-backdrop.in,
