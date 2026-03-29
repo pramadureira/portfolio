@@ -1,53 +1,32 @@
-/* Gallery image Section */
-(function() {
-    Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/azur/galleria.azur.min.js')
-    for (i = 1; i <= 3; i++) { // change according to the var visibleProjects
-        Galleria.run('#proj'+i)
-    }
-}())
-
-setGalleriaContainerHeight()
-
-function setGalleriaContainerHeight() {
-    const containers = document.querySelectorAll('.project-images')
-
-    containers.forEach(container => {
-        const containerWidth = container.clientWidth
-        const desiredRatio = 16 / 9 // 16 / 9, 4 / 3, 3 / 2
-    
-        const desiredHeight = containerWidth / desiredRatio
-    
-        container.style.height = `${desiredHeight}px`
-    })
-}
-
-
 /* Projects Section */
 const showButton = document.querySelector('#projects button')
-let visibleProjects = 3
-let showMoreNr = 1
+const projectsSection = document.getElementById('projects')
+const initialVisibleProjects = 3
+const showMoreNr = 1
+const galleryInstances = new Map()
+
+let visibleProjects = initialVisibleProjects
 
 loadProjects()
 
 function loadProjects() {
     fetch('projects.json')
         .then(response => response.json())
-        .then(data => displayProjects(data.projects))
+        .then(data => {
+            displayProjects(data.projects)
+            initializeVisibleGalleries()
+        })
         .catch(error => console.error('Error loading projects:', error))
 }
 
 function displayProjects(projects) {
-    const projectsSection = document.getElementById('projects')
-    const showButton = document.querySelector('#projects button')
-
     for (let i = 0; i < projects.length; i++) {
         const projectElement = createProjectElement(projects[i])
         if (i >= visibleProjects) projectElement.classList.add('hidden')
         projectsSection.insertBefore(projectElement, showButton)
     }
 
-    const hiddenProjects = document.querySelectorAll('article.hidden')
-    showButton.style.display = hiddenProjects.length === 0 ? "none" : "initial"
+    updateShowMoreVisibility()
 }
 
 function createProjectElement(project) {
@@ -69,57 +48,128 @@ function createProjectElement(project) {
         tagElement.textContent = tag
         tags.appendChild(tagElement)
     })
-    article.appendChild(tags);
+    article.appendChild(tags)
 
-    const imageList = document.createElement('ul')
-    imageList.classList.add('project-images')
-    imageList.setAttribute('id', project.images);
+    const gallery = document.createElement('div')
+    gallery.classList.add('project-images', 'js-gallery')
+    gallery.id = project.images
 
-    for (let i = 1; i <= project.numImages; i++) {
-        const imgPath = `images/projects/${project.images}/${i}.jpg`
-        const li = document.createElement('li')
-        const img = document.createElement('img')
-        img.src = imgPath
-        li.appendChild(img)
-        imageList.appendChild(li)
-    }
+    const mediaItems = normalizeProjectMedia(project)
+    mediaItems.forEach(item => {
+        const mediaAnchor = document.createElement('a')
+        mediaAnchor.className = 'project-media-item'
+        mediaAnchor.href = item.src
 
-    article.appendChild(imageList)
+        if (item.type === 'video') {
+            if (isExternalVideo(item.src)) {
+                mediaAnchor.dataset.iframe = 'true'
+            } else {
+                mediaAnchor.dataset.video = JSON.stringify({
+                    source: [{
+                        src: item.src,
+                        type: item.mimeType || 'video/mp4'
+                    }],
+                    attributes: {
+                        preload: false,
+                        controls: true
+                    }
+                })
+            }
+
+            if (item.poster) {
+                mediaAnchor.dataset.poster = item.poster
+            }
+        }
+
+        const thumb = document.createElement('img')
+        thumb.src = item.thumb || item.poster || item.src
+        thumb.alt = `${project.name} preview`
+
+        mediaAnchor.appendChild(thumb)
+
+        gallery.appendChild(mediaAnchor)
+    })
+
+    article.appendChild(gallery)
 
     const link = document.createElement('a')
     link.href = project.url
     link.target = '_blank'
+    link.rel = 'noopener noreferrer'
     link.innerHTML = '<i class="fa-brands fa-github fa-xl" style="color: #dedede;"></i>'
     article.appendChild(link)
-
 
     return article
 }
 
-function showMore() {
-    show = showMoreNr
-    const projectsSection = document.querySelectorAll('article.hidden')
+function normalizeProjectMedia(project) {
+    if (Array.isArray(project.media) && project.media.length > 0) {
+        return project.media
+    }
 
-    for (let i = 0; i < projectsSection.length; i++) {
-        if (projectsSection[i].classList.contains('hidden')) {
-            show--
-            projectsSection[i].classList.remove('hidden')
-            visibleProjects++
-            Galleria.run('#proj'+visibleProjects)
-        }
+    const fallbackMedia = []
+    for (let i = 1; i <= project.numImages; i++) {
+        const imgPath = `images/projects/${project.images}/${i}.jpg`
+        fallbackMedia.push({
+            type: 'image',
+            src: imgPath,
+            thumb: imgPath
+        })
+    }
+
+    return fallbackMedia
+}
+
+function isExternalVideo(src) {
+    return src.includes('youtube.com') || src.includes('youtu.be') || src.includes('vimeo.com')
+}
+
+function initializeVisibleGalleries() {
+    const visibleGalleries = document.querySelectorAll('article.project:not(.hidden) .js-gallery')
+    visibleGalleries.forEach(galleryElement => initializeGallery(galleryElement))
+}
+
+function initializeGallery(galleryElement) {
+    if (galleryInstances.has(galleryElement.id)) return
+    if (!window.lightGallery) return
+
+    const instance = lightGallery(galleryElement, {
+        selector: '.project-media-item',
+        download: false,
+        counter: true,
+        speed: 350,
+        licenseKey: '0000-0000-000-0000',
+        plugins: [lgThumbnail, lgZoom, lgVideo]
+    })
+
+    galleryInstances.set(galleryElement.id, instance)
+}
+
+function showMore() {
+    let show = showMoreNr
+    const hiddenProjects = document.querySelectorAll('article.hidden')
+
+    for (let i = 0; i < hiddenProjects.length; i++) {
+        hiddenProjects[i].classList.remove('hidden')
+        visibleProjects++
+        show--
 
         if (show === 0) break
     }
-    
-    showButton.style.display = projectsSection.length - showMoreNr <= 0 ? "none" : "initial"
+
+    initializeVisibleGalleries()
+    updateShowMoreVisibility()
 }
 
+function updateShowMoreVisibility() {
+    const hiddenProjects = document.querySelectorAll('article.hidden')
+    showButton.style.display = hiddenProjects.length === 0 ? 'none' : 'initial'
+}
 
 /* Responsive Navbar */
 const navButton = document.getElementById('nav-toggle')
 const dropdownMenu = document.getElementById('nav-menu')
 const toggleButtonIcon = document.querySelector('#nav-toggle i')
-
 
 function toggleDropdown() {
     const isOpen = dropdownMenu.classList.contains('open')
@@ -132,20 +182,16 @@ function closeDropdown() {
     dropdownMenu.classList.remove('open')
 }
 
-
 /* Event Listeners */
-document.addEventListener('click', function(event) {
-    switch (event.target) {
-        case navButton:
-        case toggleButtonIcon:
-            toggleDropdown()
-            break
-        case showButton:
-            showMore()            
-        default:
-            closeDropdown()
-            break
-    }
+navButton.addEventListener('click', event => {
+    event.stopPropagation()
+    toggleDropdown()
 })
 
-window.addEventListener('resize', setGalleriaContainerHeight);
+showButton.addEventListener('click', showMore)
+
+document.addEventListener('click', event => {
+    if (!dropdownMenu.contains(event.target) && !navButton.contains(event.target)) {
+        closeDropdown()
+    }
+})
