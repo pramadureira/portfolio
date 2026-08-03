@@ -17,6 +17,22 @@
       ]
     },
     {
+      "name": "Praggymatics",
+      "description": "Engineered an interactive, AI-supported application targeting children aged 8-11 with pragmatic communication impairments. Architected a dual-module system integrating 'Story Time' (contextualized micro-narratives) and 'Chatting Time' (LLM-driven free dialogue) to provide adaptive, low-pressure feedback. Implemented a scalable client-server architecture using Next.js for the frontend, Node.js for backend services, and a PostgreSQL database for persistent progress tracking.",
+      "tags": ["Next.js", "Node.js", "PostgreSQL", "LLM", "HCI"],
+      "assets": [
+        "images/projects/proj13/proj13.mp4"
+      ]
+    },
+    {
+      "name": "WebGL 3D Racing Engine",
+      "description": "Developed a browser-based 3D racing game and lightweight rendering framework utilizing Three.js. Engineered a custom JSON scene-graph parser to dynamically load complex environments, materials, and custom shaders. Implemented procedural Catmull-Rom track generation, bounding-box collision detection for obstacles, and Level of Detail (LOD) optimizations. Built a modular, client-side state machine to manage the real-time game loop, raycasting interactions, and dynamic lighting without relying on a server-side backend.",
+      "tags": ["Three.js", "JavaScript", "Computer Graphics", "GLSL", "WebGL"],
+      "assets": [
+        "images/projects/proj12/proj12.mp4"
+      ]
+    },
+    {
       "name": "Distributed Systems Engineering",
       "description": "Architected a local-first distributed application using Node.js and ZeroMQ to achieve high availability and horizontal scalability. Implemented a consistent hashing ring with virtual nodes for optimal load balancing and utilized Conflict-Free Replicated Data Types (CRDTs) to ensure eventual consistency across distributed replicas.",
       "tags": ["Node.js", "ZeroMQ", "Distributed Systems", "CRDTs"],
@@ -48,16 +64,6 @@
         "images/projects/proj7/3.png"
       ],
       "url": "https://github.com/pramadureira/ai-proj1"
-    },
-    {
-      "name": "Algorithmic Optimization (TSP)",
-      "description": "Addressed the Travelling Salesperson Problem (TSP) by implementing and comparing multiple algorithms. Developed a brute-force method for small graphs, a triangular approximation heuristic, and a highly efficient custom heuristic for large, fully connected graphs, thoroughly analyzing computational trade-offs between solution quality and execution time.",
-      "tags": ["C++", "Algorithms", "Optimization", "Heuristics"],
-      "assets": [
-        "images/projects/proj5/1.jpg",
-        "images/projects/proj5/2.jpg"
-      ],
-      "url": "https://github.com/pramadureira/da-proj2"
     },
     {
       "name": "Enterprise HR Platform (Kuehne + Nagel)",
